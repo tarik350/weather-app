@@ -1,0 +1,16 @@
+{
+  "app_title": "Weather App",
+  "clear_cache_button": "Clear\nCache",
+  "enter_city_hint": "Enter city name here",
+  "error_message": "Error: {}",
+  "fetch_weather_prompt": "Enter a city name to fetch weather",
+  "feels_like": "Feels Like",
+  "min_temperature": "Min Temperature",
+  "max_temperature": "Max Temperature",
+  "pressure": "Pressure",
+  "humidity": "Humidity",
+  "cache_cleared": "Cache cleared successfully",
+  "cache_clear_error": "Failed to clear cache",
+  "select_language": "Select language",
+  "amharic": "Amharic"
+}

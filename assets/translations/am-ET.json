@@ -1,0 +1,16 @@
+{
+  "app_title": "የአየር ንብረት መተግበሪያ",
+  "clear_cache_button": "ካች\nአጽዳ",
+  "enter_city_hint": "የከተማ ስም እዚህ አስገባ",
+  "error_message": "ስህተት አጋጥሞል: {}",
+  "fetch_weather_prompt": "የአየር ሁኔታን ለማግኘት የከተማ ስም ያስገቡ",
+  "feels_like": "የአየር ስሜት",
+  "min_temperature": "አነስተኛ ሙቀት",
+  "max_temperature": "ከፍተኛ ሙቀት",
+  "pressure": "ግፊት",
+  "humidity": "እርጥበት",
+  "cache_cleared": "ካች በስኬት ተጠርጣሪቷል",
+  "cache_clear_error": "ካች መጽዳት አልተሳካም",
+  "select_language": "ቋንቋ ይቀይሩ",
+  "amharic": "አማርኛ"
+}
