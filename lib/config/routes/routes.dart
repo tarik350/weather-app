@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:weather_app/config/routes.gr.dart';
+import 'package:weather_app/config/routes/routes.gr.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {

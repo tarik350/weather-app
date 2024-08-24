@@ -99,12 +99,12 @@ class WeatherScreen extends StatelessWidget {
         lable: "clear_cache_button".tr(),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 22.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12.h),
+              child: Row(
                 children: [
                   Expanded(
                     child: Padding(
@@ -118,6 +118,12 @@ class WeatherScreen extends StatelessWidget {
                           keyString: "city_input_field",
                           inputType: TextInputType.text,
                           errorText: null,
+                          onFieldSubmitted: (value) {
+                            // Added this line
+                            context
+                                .read<WeatherCubit>()
+                                .fetchWeather(cityController.text);
+                          },
                         ),
                       ),
                     ),
@@ -127,13 +133,15 @@ class WeatherScreen extends StatelessWidget {
                     child: IconButton(
                       splashColor: Colors.transparent,
                       icon: Container(
-                          height: 53.h,
-                          width: 53.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.r),
-                              border: Border.all(
-                                  width: 1, color: AppColors.primaryColor)),
-                          child: const Icon(Icons.search)),
+                        height: 53.h,
+                        width: 53.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(
+                              width: 1, color: AppColors.primaryColor),
+                        ),
+                        child: const Icon(Icons.search),
+                      ),
                       onPressed: () {
                         context
                             .read<WeatherCubit>()
@@ -143,7 +151,10 @@ class WeatherScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 22.h),
                 child: BlocConsumer<WeatherCubit, WeatherState>(
                   listener: (context, state) {
                     // Optionally handle side effects here
@@ -249,8 +260,8 @@ class WeatherScreen extends StatelessWidget {
                   },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

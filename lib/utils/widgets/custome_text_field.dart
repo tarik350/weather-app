@@ -11,17 +11,20 @@ class CustomTextfield extends StatelessWidget {
   final String? initialValue;
   final Widget? suffix;
   final TextEditingController controller;
+  final Function(String)? onFieldSubmitted; // Added
 
-  const CustomTextfield(
-      {super.key,
-      this.initialValue,
-      required this.hintText,
-      required this.onChanged,
-      required this.keyString,
-      required this.inputType,
-      required this.errorText,
-      required this.controller,
-      this.suffix});
+  const CustomTextfield({
+    super.key,
+    this.initialValue,
+    required this.hintText,
+    required this.onChanged,
+    required this.keyString,
+    required this.inputType,
+    required this.errorText,
+    required this.controller,
+    this.suffix,
+    this.onFieldSubmitted, // Added
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +33,7 @@ class CustomTextfield extends StatelessWidget {
       initialValue: initialValue,
       key: Key(keyString),
       onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted, // Added
       keyboardType: inputType,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 18.h),

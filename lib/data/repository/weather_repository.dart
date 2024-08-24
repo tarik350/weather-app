@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:weather_app/data/model/weather.dart';
 import 'package:weather_app/services/init_services.dart';
 import 'package:weather_app/services/storage_service.dart';
@@ -10,7 +8,6 @@ class WeatherRepository {
   final _storageService = getIt<StorageService>();
 
   Future<WeatherModel> getWeather(String searchString) async {
-    final all = _storageService.getAllWeatherResponses();
     final cachedWeather =
         _storageService.getWeatherResponse(searchString.toLowerCase());
     if (cachedWeather != null) {

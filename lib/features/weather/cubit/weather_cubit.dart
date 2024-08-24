@@ -16,7 +16,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     try {
       final weatherResponse = await weatherRepository.getWeather(searchString);
       emit(WeatherLoaded(weatherResponse));
-    } on SocketException catch (e) {
+    } on SocketException catch (_) {
       emit(WeatherError('Please check your Internet connection'));
     } catch (error) {
       emit(WeatherError('Failed to fetch weather data'));
